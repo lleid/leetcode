@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class ToLowerCase709 {
+public class ToLowerCase_709 {
     public static String toLowerCase(String str) {
         return str.toLowerCase();
     }

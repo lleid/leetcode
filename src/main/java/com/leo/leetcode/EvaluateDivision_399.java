@@ -1,8 +1,8 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
 import java.util.*;
 
-public class EvaluateDivision399 {
+public class EvaluateDivision_399 {
     public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
         Map<String, Set<String>> map = getAllParamers(equations, values);
         double[] result = new double[queries.length];
@@ -124,7 +124,7 @@ public class EvaluateDivision399 {
     }
 
     public static void main(String[] args) {
-        EvaluateDivision399 ed = new EvaluateDivision399();
+        EvaluateDivision_399 ed = new EvaluateDivision_399();
         String[][] earray = new String[][]{{
                 "a", "b"
         }, {

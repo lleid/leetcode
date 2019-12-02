@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class ReverseInteger7 {
+public class ReverseInteger_7 {
     public int reverse(int x) {
         if (x == 0) {
             return 0;
@@ -17,7 +17,7 @@ public class ReverseInteger7 {
     }
 
     public static void main(String[] args) {
-        ReverseInteger7 reverseInteger7 = new ReverseInteger7();
+        ReverseInteger_7 reverseInteger7 = new ReverseInteger_7();
         reverseInteger7.reverse(1534236469);
     }
 }

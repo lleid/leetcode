@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class RobotReturnToOrigin657 {
+public class RobotReturnToOrigin_657 {
     public boolean judgeCircle(String moves) {
         int xCount = 0;
         int yCount = 0;
@@ -28,7 +28,7 @@ public class RobotReturnToOrigin657 {
 
 
     public static void main(String[] args) {
-        RobotReturnToOrigin657 test = new RobotReturnToOrigin657();
+        RobotReturnToOrigin_657 test = new RobotReturnToOrigin_657();
         boolean flag = test.judgeCircle("UDL");
         System.out.println(flag);
     }

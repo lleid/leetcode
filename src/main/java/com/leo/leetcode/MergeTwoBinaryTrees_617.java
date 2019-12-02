@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class MergeTwoBinaryTrees617 {
+public class MergeTwoBinaryTrees_617 {
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
         return count(t1, t2);
     }
@@ -54,7 +54,7 @@ public class MergeTwoBinaryTrees617 {
         t5.right = t6;
         t6.right = t7;
 
-        MergeTwoBinaryTrees617 mergeTwoBinaryTrees617 = new MergeTwoBinaryTrees617();
+        MergeTwoBinaryTrees_617 mergeTwoBinaryTrees617 = new MergeTwoBinaryTrees_617();
         TreeNode treeNode = mergeTwoBinaryTrees617.mergeTrees(t1, t5);
         System.out.println("123");
     }

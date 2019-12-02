@@ -1,8 +1,8 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
 import java.util.Arrays;
 
-public class MaximumBinaryTree654 {
+public class MaximumBinaryTree_654 {
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         return explain(nums);
     }
@@ -38,7 +38,7 @@ public class MaximumBinaryTree654 {
     }
 
     public static void main(String[] args) {
-        MaximumBinaryTree654 test = new MaximumBinaryTree654();
+        MaximumBinaryTree_654 test = new MaximumBinaryTree_654();
         test.constructMaximumBinaryTree(new int[]{3, 2, 1, 6, 0, 5});
     }
 }

@@ -1,7 +1,7 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
 //TODO 未完成
-public class DeleteNodeInALinkedList237 {
+public class DeleteNodeInALinkedList_237 {
 
     public void deleteNode(ListNode node) {
         node.val = node.next.val;

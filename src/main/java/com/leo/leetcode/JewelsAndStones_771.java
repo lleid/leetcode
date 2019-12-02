@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class JewelsAndStones771 {
+public class JewelsAndStones_771 {
 
     public int numJewelsInStones(String J, String S) {
         int count = 0;
@@ -17,7 +17,7 @@ public class JewelsAndStones771 {
     }
 
     public static void main(String[] args) {
-        JewelsAndStones771 jewelsAndStones771 = new JewelsAndStones771();
+        JewelsAndStones_771 jewelsAndStones771 = new JewelsAndStones_771();
         int count = jewelsAndStones771.numJewelsInStones("z", "ZSZZ");
         System.out.println(count);
     }

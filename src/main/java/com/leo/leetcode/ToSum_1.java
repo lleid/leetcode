@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class ToSum1 {
+public class ToSum_1 {
 
     public static int[] twoSum(int[] nums, int target) {
         int[] indexArray = new int[2];

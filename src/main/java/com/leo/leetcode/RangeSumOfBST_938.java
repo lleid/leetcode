@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class RangeSumOfBST938 {
+public class RangeSumOfBST_938 {
 
     public int rangeSumBST(TreeNode root, int L, int R) {
         return toCount(root, L, R);
@@ -36,7 +36,7 @@ public class RangeSumOfBST938 {
         t3.right = t5;
         t4.left = t6;
         t4.right = t7;
-        RangeSumOfBST938 test = new RangeSumOfBST938();
+        RangeSumOfBST_938 test = new RangeSumOfBST_938();
         int count = test.rangeSumBST(t2, 7, 15);
         System.out.println(count);
     }

@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class SearchInsertPosition35 {
+public class SearchInsertPosition_35 {
 
     public static int searchInsert(int[] nums, int target) {
         if (nums == null || nums.length == 0) {

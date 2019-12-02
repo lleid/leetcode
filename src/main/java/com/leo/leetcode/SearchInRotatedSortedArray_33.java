@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class SearchInRotatedSortedArray33 {
+public class SearchInRotatedSortedArray_33 {
 
     public int search2(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
@@ -20,6 +20,13 @@ public class SearchInRotatedSortedArray33 {
     }
 
 
+    /**
+     * 利用哨兵，当数组很大时，性能明显
+     *
+     * @param nums
+     * @param target
+     * @return
+     */
     public int search(int[] nums, int target) {
         if (nums == null || nums.length == 0) {
             return -1;

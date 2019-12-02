@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class AddTwoNumbers2 {
+public class AddTwoNumbers_2 {
 
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         return addTwoNumbers(l1, l2, 0);

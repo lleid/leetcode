@@ -1,6 +1,6 @@
-package com.foue.leetcode;
+package com.leo.leetcode;
 
-public class HamingDistance461 {
+public class HamingDistance_461 {
     public int hammingDistance(int x, int y) {
         String str1 = Integer.toBinaryString(x);
         String str2 = Integer.toBinaryString(y);
@@ -32,7 +32,7 @@ public class HamingDistance461 {
     }
 
     public static void main(String[] args) {
-        HamingDistance461 hamingDistance461 = new HamingDistance461();
+        HamingDistance_461 hamingDistance461 = new HamingDistance_461();
         hamingDistance461.hammingDistance(1, 4);
     }
 }

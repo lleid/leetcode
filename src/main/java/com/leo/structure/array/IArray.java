@@ -3,81 +3,140 @@ package com.leo.structure.array;
 /**
  * 自定义数组
  */
-public class IArray {
-    private int data[];
-    private int count;
-    private int n;
+public class IArray<T> {
+    private Object data[];
+    private int size;
 
-    public IArray(int n) {
-        this.data = new int[n];
-        this.count = 0;
-        this.n = n;
+    public IArray(int capacity) {
+        this.data = new Object[capacity];
+        this.size = capacity;
     }
 
-    public int find(int index) {
-        if (index < 0 || index >= count) {
-            return -1;
-        }
-        return data[index];
+    public IArray() {
+        this(10);
     }
 
-    public boolean insert(int index, int value) {
-        if (count == n) {
-            System.out.println("没有可插入的位置");
-            return false;
-        }
+    public int getCapacity() {
+        return data.length;
+    }
 
-        if (index < 0 || index > count) {
-            System.out.println("位置不合法");
-            return false;
-        }
+    public int count() {
+        return size;
+    }
 
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    public void set(int index, T value) {
+        checkIndex(index);
         data[index] = value;
-
-        if (index == count) {
-            ++count;
-        }
-
-        return true;
     }
 
-    public boolean delete(int index) {
-        if (index < 0 || index >= count) {
-            return false;
+    public T get(int index) {
+        checkIndex(index);
+        return (T) data[index];
+    }
+
+    public boolean contains(T value) {
+        for (int i = 0; i < data.length; i++) {
+            if (data.equals(value)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int find(T value) {
+        for (int i = 0; i < data.length; i++) {
+            if (data.equals(value)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+
+    public void add(int index, T value) {
+        checkIndexForOperate(index);
+        if (size == data.length) {
+            resize(data.length * 2);
         }
 
-        //删除索引后的元素前移
-        for (int i = index + 1; i < count; i++) {
+        for (int i = size - 1; i >= index; --i) {
+            data[i + 1] = data[i];
+        }
+        data[index] = value;
+        size++;
+    }
+
+    // 向数组头插入元素
+    public void addFirst(T e) {
+        add(0, e);
+    }
+
+    // 向数组尾插入元素
+    public void addLast(T e) {
+        add(size, e);
+    }
+
+    public T remove(int index) {
+        checkIndex(index);
+
+        T tmp = (T) data[index];
+
+        for (int i = index + 1; i < size; i++) {
             data[i - 1] = data[i];
         }
 
-        --count;
-        return true;
-    }
+        size--;
+        data[size] = null;
 
-    public void printAll() {
-        for (int i = 0; i < count; ++i) {
-            System.out.print(data[i] + " ");
+        // 缩容
+        if (size == data.length / 4 && data.length / 2 != 0) {
+            resize(data.length / 2);
         }
-        System.out.println();
+
+        return tmp;
     }
 
-    public static void main(String[] args) {
-        IArray array = new IArray(5);
-        array.printAll();
-        array.insert(0, 3);
-        array.insert(0, 3);
-        array.printAll();
-        array.insert(1, 4);
-        array.insert(2, 5);
-        array.insert(3, 6);
-        array.insert(4, 7);
-        array.insert(5, 8);
-        array.printAll();
-        array.delete(2);
-        array.insert(4, 8);
-        array.insert(5, 9);
-        array.printAll();
+
+    // 删除第一个元素
+    public T removeFirst() {
+        return remove(0);
     }
 
+    // 删除末尾元素
+    public T removeLast() {
+        return remove(size - 1);
+    }
+
+    // 从数组中删除指定元素
+    public void removeElement(T e) {
+        int index = find(e);
+        if (index != -1) {
+            remove(index);
+        }
+    }
+
+    public void resize(int capacity) {
+        Object[] objects = new Object[capacity];
+        for (int i = 0; i < size; i++) {
+            objects[i] = data[i];
+        }
+        data = objects;
+    }
+
+
+    public void checkIndex(int index) {
+        if (index < 0 && index >= size) {
+            throw new IllegalArgumentException("Add failed ! Required index >=0 and index < size .");
+        }
+    }
+
+    public void checkIndexForOperate(int index) {
+        if (index < 0 && index > size) {
+            throw new IllegalArgumentException("Operate failed ! Required index >0 and index <= size .");
+        }
+    }
 }
